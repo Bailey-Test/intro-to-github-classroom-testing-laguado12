@@ -13,11 +13,11 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: Hello world test
-      id: hello-world-test
+    - name: Hello world testing 2
+      id: hello-world-testing-2
       uses: classroom-resources/autograding-io-grader@v1
       with:
-        test-name: Hello world test
+        test-name: Hello world testing 2
         setup-command: ''
         command: "./calculator.sh"
         input: 1+1
@@ -28,6 +28,6 @@ jobs:
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        HELLO-WORLD-TEST_RESULTS: "${{steps.hello-world-test.outputs.result}}"
+        HELLO-WORLD-TESTING-2_RESULTS: "${{steps.hello-world-testing-2.outputs.result}}"
       with:
-        runners: hello-world-test
+        runners: hello-world-testing-2
